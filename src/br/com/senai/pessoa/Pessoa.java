@@ -2,6 +2,8 @@ package br.com.senai.pessoa;
 
 import java.util.Calendar;
 
+import br.com.senai.endereco.Endereco;
+
 // Classe
 public class Pessoa extends Endereco {
 
@@ -26,13 +28,14 @@ public class Pessoa extends Endereco {
 
 	public void setAnoNascimento(int anoNascimento) {
 		this.anoNascimento = anoNascimento;
+		setIdade();
 	}
 
 	public int getIdade() {
 		return idade;
 	}
 
-	public void setIdade() {
+	private void setIdade() {
 		Calendar calendar = Calendar.getInstance();
 
 		this.idade = calendar.get(Calendar.YEAR) - getAnoNascimento();
