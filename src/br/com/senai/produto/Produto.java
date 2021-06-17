@@ -38,8 +38,8 @@ public class Produto {
 		return valorTotalDoProduto;
 	}
 
-	private void setValorTotalDoProduto() {
-		this.valorTotalDoProduto = getValorUnitarioDoProduto() * getQuantidadeDoProduto();
+	public void setValorTotalDoProduto(double valorTotalDoProduto) {
+		this.valorTotalDoProduto = valorTotalDoProduto;
 	}
 
 	public int getQuantidadeDoProduto() {
@@ -48,8 +48,6 @@ public class Produto {
 
 	public void setQuantidadeDoProduto(int quantidadeDoProduto) {
 		this.quantidadeDoProduto = quantidadeDoProduto;
-		
-		setValorTotalDoProduto();
 	}
 
 }
