@@ -34,6 +34,13 @@ public class ProdutoController {
 	}
 	
 	public List<Produto> listarProdutos(List<Produto> produtos) {
+		
+		if (produtos.isEmpty()) {
+			System.out.println("\nNão possui produtos cadastrados.");
+			
+			return null;
+		}
+		
 		System.out.println("\n--- PRODUTOS ADICIONADOS ---");
 		
 		System.out.printf("| %2s | %4s | %14s | %10s | %11s |\n", 
@@ -41,7 +48,7 @@ public class ProdutoController {
 
 		for (int i = 0; i < produtos.size(); i++) {
 			System.out.printf("| %2d | %4s | %14.2f | %10d | %11.2f |\n", 
-					i,
+					i + 1,
 					produtos.get(i).getNomeDoProduto(),
 					produtos.get(i).getValorUnitarioDoProduto(), 
 					produtos.get(i).getQuantidadeDoProduto(),
@@ -58,8 +65,12 @@ public class ProdutoController {
 		
 		listarProdutos(produtos);
 		
+		if (produtos.isEmpty()) {
+			return null;
+		}
+		
 		System.out.print("\nInforme o Id do produto para editar: ");
-		int idProduto = in.nextInt();
+		int idProduto = in.nextInt() - 1;
 		
 		System.out.println("\n1) Editar o nome do produto");
 		System.out.println("2) Editar o valor unitário do produto");
@@ -120,6 +131,31 @@ public class ProdutoController {
 		}
 		
 		return produtos;
+		
+	}
+	
+	public void excluirProduto(List<Produto> produtos) {
+		
+		listarProdutos(produtos);
+		
+		if (produtos.isEmpty()) {
+			return;
+		}
+		
+		System.out.println("\n--- EXCLUIR PRODUTO ---");
+		
+		System.out.print("\nInforme o Id do produto para excluir: ");
+		int idProduto = in.nextInt() - 1;
+		
+		if (produtos.size() <= idProduto) {
+			System.out.println("\nProduto não cadastrado.");
+			
+			return;
+		}
+		
+		produtos.remove(idProduto);
+		
+		System.out.println("\nProduto excluido!");
 		
 	}
 
