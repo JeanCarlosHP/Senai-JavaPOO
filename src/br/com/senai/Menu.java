@@ -14,10 +14,13 @@ public class Menu {
 	public void menu() {
 		System.out.println("\n------- MENU -------");
 		System.out.println("1 - Cadastrar pessoa");
-		System.out.println("2 - Listar pessoas cadastradas");
-		System.out.println("3 - Adicionar produto");
-		System.out.println("4 - Listar produtos");
-		System.out.println("5 - Editar produto");
+		System.out.println("2 - Listar pessoas");
+		System.out.println("3 - Editar pessoa");
+		System.out.println("4 - Excluir pessoa");
+		System.out.println("5 - Adicionar produto");
+		System.out.println("6 - Listar produto");
+		System.out.println("7 - Editar produto");
+		System.out.println("8 - Excluir produto");
 		System.out.println("9 - Sair do sistema");
 		System.out.println("--------------------");
 	}
