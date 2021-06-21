@@ -10,8 +10,7 @@ public class Produto {
 	public Produto() {
 	}
 
-	public Produto(String nomeDoProduto, double valorUnitarioDoProduto, double valorTotalDoProduto,
-			int quantidadeDoProduto) {
+	public Produto(String nomeDoProduto, double valorUnitarioDoProduto, int quantidadeDoProduto, double valorTotalDoProduto) {
 		this.nomeDoProduto = nomeDoProduto;
 		this.valorUnitarioDoProduto = valorUnitarioDoProduto;
 		this.valorTotalDoProduto = valorTotalDoProduto;
