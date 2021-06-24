@@ -10,18 +10,13 @@ public class Menu {
 		System.out.print("> ");
 		return in.nextInt();
 	}
-
-	public void menu() {
-		System.out.println("\n------- MENU -------");
-		System.out.println("1 - Cadastrar pessoa");
-		System.out.println("2 - Listar pessoas");
-		System.out.println("3 - Editar pessoa");
-		System.out.println("4 - Excluir pessoa");
-		System.out.println("5 - Adicionar produto");
-		System.out.println("6 - Listar produto");
-		System.out.println("7 - Editar produto");
-		System.out.println("8 - Excluir produto");
-		System.out.println("9 - Sair do sistema");
+	
+	public void menuPrincipal() {
+		System.out.println("\n------- MENU PRINCIPAL -------");
+		System.out.println("1 - Registro Pessoa");
+		System.out.println("2 - Registro Produto");
+		System.out.println("3 - Registro Venda");
+		System.out.println("0 - Sair do sistema");
 		System.out.println("--------------------");
 	}
 	
