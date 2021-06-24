@@ -1,16 +1,55 @@
 package br.com.senai.pessoa;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import br.com.senai.Menu;
 import br.com.senai.produto.Produto;
 
 public class PessoaController {
-
+	
 	private Scanner in;
 
 	public PessoaController() {
 		in = new Scanner(System.in);
+	}
+	
+	public void menuPessoa() {
+		System.out.println("\n------- MENU PESSOA -------");
+		System.out.println("1 - Cadastrar pessoa");
+		System.out.println("2 - Listar pessoas");
+		System.out.println("3 - Editar pessoa");
+		System.out.println("4 - Excluir pessoa");
+		System.out.println("--------------------");
+		
+		System.out.print("> ");
+		int opcao = in.nextInt();
+		
+		switch (opcao) {
+		case 1:
+			pessoas.add(cadastrarPessoa());
+			break;
+		
+		case 2:
+			listarPessoas(pessoas);
+			break;
+		
+		case 3:
+			editarPessoa(pessoas);
+			break;
+			
+		case 4:
+			excluirPessoa(pessoas);
+			break;
+		
+		default:
+			System.out.println("\nOpção Inválida!");
+		}
+	}
+	
+	public List<Pessoa> getPessoas() {
+		return pessoas;
 	}
 
 	public Pessoa cadastrarPessoa() {
@@ -19,14 +58,14 @@ public class PessoaController {
 		System.out.println("\n--- CADASTRAR PESSOA ---");
 
 		System.out.print("Informe o nome: ");
-		pessoa.setNome(in.nextLine());
+		pessoa.setNome(in.next());
 
 		System.out.print("Informe o ano de nascimento: ");
 		pessoa.setAnoNascimento(in.nextInt());
 
 		System.out.print("Informe a altura: ");
 		pessoa.setAltura(in.nextDouble());
-		
+		/*
 		System.out.print("Informe o pais: ");
 		in.nextLine();
 		pessoa.setNomePais(in.nextLine());
@@ -55,7 +94,7 @@ public class PessoaController {
 		System.out.print("Informe o complemento: ");
 		in.nextLine();
 		pessoa.setComplemento(in.nextLine());
-
+		*/
 		System.out.println("\nPessoa cadastrada");
 
 		return pessoa;
