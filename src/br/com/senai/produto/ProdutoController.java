@@ -1,5 +1,6 @@
 package br.com.senai.produto;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -7,10 +8,49 @@ import br.com.senai.pessoa.Pessoa;
 
 public class ProdutoController {
 	
+	List<Produto> produtos = new ArrayList<Produto>();
 	private Scanner in;
 
 	public ProdutoController() {
 		in = new Scanner(System.in);
+	}
+	
+	public void menuProduto() {
+		System.out.println("\n------- MENU PRODUTO -------");
+		System.out.println("1 - Adicionar produto");
+		System.out.println("2 - Listar produto");
+		System.out.println("3 - Editar produto");
+		System.out.println("4 - Excluir produto");
+		System.out.println("--------------------");
+		
+		System.out.print("> ");
+		int opcao = in.nextInt();
+		
+		switch (opcao) {
+		case 1:
+			produtos.add(adicionarProduto());
+			break;
+			
+		case 2:
+			listarProdutos(produtos);
+			break;
+			
+		case 3:
+			editarProduto(produtos);
+			break;
+			
+		case 4:
+			excluirProduto(produtos);
+			break;
+			
+		default:
+			System.out.println("\nOpção Inválida!");
+			break;
+		}
+	}
+	
+	public List<Produto> getProduto() {
+		return produtos;
 	}
 
 	public Produto adicionarProduto() {
